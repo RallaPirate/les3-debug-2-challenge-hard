@@ -25,13 +25,20 @@ export default function DashboardPage() {
   const [quote, setQuote] = useState("");
   const [loading, setLoading] = useState(true);
 
-  // BUG: useEffect met async direct in callback + verkeerde dependency array
-  useEffect(async () => {
-    const res = await fetch("/api/quotes");
-    const data = await res.json();
-    setQuote(data.text);
-    setLoading(false);
-  }, [quote]);
+  useEffect(() => {
+    let cancelled = false;
+    async function loadQuote() {
+      const res = await fetch("/api/quotes");
+      const data = await res.json();
+
+      if (!cancelled) {
+        setQuote(data.text ?? "");
+        setLoading(false);
+      }
+    }
+    loadQuote();
+    return () => { cancelled = true; };
+  }, []);
 
   return (
     <div className="page-container py-12">

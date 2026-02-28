@@ -1,5 +1,4 @@
-// BUG: NextResponse is verkeerd geïmporteerd
-import { NextResponse } from "next/servers";
+import { NextResponse } from "next/server";
 
 const quotes = [
   { id: 1, text: "Code is als humor. Als je het moet uitleggen, is het slecht.", author: "Cory House" },
