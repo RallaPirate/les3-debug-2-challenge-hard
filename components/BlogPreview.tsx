@@ -4,8 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Clock } from "lucide-react";
 
 export default function BlogPreview() {
-  // BUG: toont alleen eerste 2, maar .slice() heeft verkeerde parameters
-  const recentPosts = blogPosts.slice(-2, 0);
+  const recentPosts = blogPosts.slice(0, 2);
 
   return (
     <section style={{

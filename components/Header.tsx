@@ -64,7 +64,7 @@ export default function Header() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           style={{
-            display: 'none',
+            // display: 'none',
             background: 'none',
             border: 'none',
             cursor: 'pointer',

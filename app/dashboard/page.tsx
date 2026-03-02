@@ -17,6 +17,7 @@ function getIcon(iconName: string) {
     users: <Users size={24} />,
     eye: <Eye size={24} />,
     clock: <Clock size={24} />,
+    star: <Star size={24} />,
   };
   return icons[iconName];
 }
