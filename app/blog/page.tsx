@@ -1,12 +1,17 @@
 import { blogPosts } from "@/lib/posts";
 import { formatDate } from "@/lib/utils";
 import Link from "next/link";
-import { Clock, Tag } from "lucide-react";
+import { Clock } from "lucide-react";
 
 export default function BlogPage() {
+  const pageContainerClass = "max-w-[1200px] mx-auto px-5 py-12";
+  const sectionTitleClass = "text-[32px] font-bold text-center mb-10 text-[#1a1a1a]";
+  const cardClass =
+    "p-6 bg-white rounded-xl border border-gray-200 transition-all duration-200 hover:shadow-[0_10px_25px_rgba(0,0,0,0.1)] hover:-translate-y-0.5";
+
   return (
-    <div className="page-container py-12">
-      <h1 className="section-title">Blog</h1>
+    <div className={pageContainerClass}>
+      <h1 className={sectionTitleClass}>Blog</h1>
 
       <div style={{
         display: 'grid',
@@ -18,7 +23,7 @@ export default function BlogPage() {
             textDecoration: 'none',
             color: 'inherit'
           }}>
-            <article className="card" style={{
+            <article className={cardClass} style={{
               height: '100%',
               display: 'flex',
               flexDirection: 'column'

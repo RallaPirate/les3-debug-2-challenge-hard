@@ -3,8 +3,14 @@
 import { useState, useEffect } from "react";
 import { Quote } from "lucide-react";
 
+type QuoteData = {
+  id: number;
+  text: string;
+  author: string;
+};
+
 export default function QuoteOfTheDay() {
-  const [quote, setQuote] = useState(null);
+  const [quote, setQuote] = useState<QuoteData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -33,6 +39,10 @@ export default function QuoteOfTheDay() {
 
         {loading ? (
           <p style={{ color: '#9ca3af', fontSize: '18px' }}>Quote laden...</p>
+        ) : !quote ? (
+          <p style={{ color: '#9ca3af', fontSize: '18px' }}>
+            Geen quote beschikbaar.
+          </p>
         ) : (
           <>
             <blockquote style={{

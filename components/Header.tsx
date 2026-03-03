@@ -43,11 +43,13 @@ export default function Header() {
         </Link>
 
         {/* Desktop navigatie */}
-        <nav style={{
-          display: 'flex',
-          gap: '24px',
-          alignItems: 'center'
-        }}>
+        <nav
+          className="hidden md:flex"
+          style={{
+            gap: '24px',
+            alignItems: 'center'
+          }}
+        >
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} style={{
               color: '#4b5563',
@@ -60,11 +62,11 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile hamburger — BUG: menu toggled maar content niet zichtbaar */}
+        {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
+          className="flex items-center justify-center md:hidden"
           style={{
-            // display: 'none',
             background: 'none',
             border: 'none',
             cursor: 'pointer',
@@ -75,15 +77,16 @@ export default function Header() {
         </button>
       </div>
 
-      {/* BUG: Mobile menu is altijd display:none */}
+      {/* Mobile menu */}
       {menuOpen && (
-        <div style={{
-          display: 'none',
-          flexDirection: 'column',
-          padding: '12px 20px',
-          borderTop: '1px solid #e5e7eb',
-          backgroundColor: 'white'
-        }}>
+        <div
+          className="flex flex-col md:hidden"
+          style={{
+            padding: '12px 20px',
+            borderTop: '1px solid #e5e7eb',
+            backgroundColor: 'white'
+          }}
+        >
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} style={{
               color: '#4b5563',

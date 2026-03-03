@@ -1,4 +1,4 @@
-// BUG: clsx is niet geïnstalleerd maar wordt wel geïmporteerd
+
 import { clsx, type ClassValue } from "clsx";
 
 export function cn(...inputs: ClassValue[]) {

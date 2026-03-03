@@ -4,7 +4,7 @@ import { ArrowLeft, Clock } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-// BUG: params moet await worden in Next.js 14+ App Router
+
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
 

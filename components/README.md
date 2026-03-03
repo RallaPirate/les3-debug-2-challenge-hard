@@ -8,3 +8,7 @@ Bug fixes:
 3.dashboard useEffect returned a Promise, which is not allowed. Fixed by debugging mode prompt in Agent.
 4.dashboard useEffect dependency caused infinite loop. Fixed by removing the dependency - same debugging mode prompt in Agent as bug 4 fixed this.
 5.blogPreview slice feature was not working. Fixed by debugging mode prompt in Agent.
+6.star icon was not mapped (manual fix, not worth a prompt)
+7.hardcoded display: 'none' in header in the mobile hamburger <button> and the truthy/falsy {openMenu && ...} fixed into display on mobile screens ONLY using agent (not debugging mode)
+7B. Hid the desktop nav in the header when used on mobile screen fixed by using agent (not debugging mode)
+8 

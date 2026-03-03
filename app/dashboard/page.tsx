@@ -11,7 +11,7 @@ const stats: DashboardStat[] = [
   { label: "Rating", value: "4.8/5", change: 0.3, icon: "star" },
 ];
 
-// BUG: icon mapping functie returned soms undefined
+
 function getIcon(iconName: string) {
   const icons: Record<string, React.ReactNode> = {
     users: <Users size={24} />,
@@ -25,6 +25,10 @@ function getIcon(iconName: string) {
 export default function DashboardPage() {
   const [quote, setQuote] = useState("");
   const [loading, setLoading] = useState(true);
+  const pageContainerClass = "max-w-[1200px] mx-auto px-5 py-12";
+  const sectionTitleClass = "text-[32px] font-bold text-center mb-10 text-[#1a1a1a]";
+  const cardBaseClass =
+    "bg-white rounded-xl border border-gray-200 transition-all duration-200 hover:shadow-[0_10px_25px_rgba(0,0,0,0.1)] hover:-translate-y-0.5";
 
   useEffect(() => {
     let cancelled = false;
@@ -42,8 +46,8 @@ export default function DashboardPage() {
   }, []);
 
   return (
-    <div className="page-container py-12">
-      <h1 className="section-title">Dashboard</h1>
+    <div className={pageContainerClass}>
+      <h1 className={sectionTitleClass}>Dashboard</h1>
 
       <div style={{
         display: 'grid',
@@ -52,7 +56,7 @@ export default function DashboardPage() {
         marginBottom: '40px'
       }}>
         {stats.map((stat) => (
-          <div key={stat.label} className="card" style={{
+          <div key={stat.label} className={`${cardBaseClass} p-6`} style={{
             display: 'flex',
             flexDirection: 'column',
             gap: '8px'
@@ -104,7 +108,7 @@ export default function DashboardPage() {
         ))}
       </div>
 
-      <div className="card" style={{ padding: '32px' }}>
+      <div className={`${cardBaseClass} p-8`}>
         <h2 style={{
           fontSize: '20px',
           fontWeight: '600',
