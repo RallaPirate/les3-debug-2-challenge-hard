@@ -11,4 +11,6 @@ Bug fixes:
 6.star icon was not mapped (manual fix, not worth a prompt)
 7.hardcoded display: 'none' in header in the mobile hamburger <button> and the truthy/falsy {openMenu && ...} fixed into display on mobile screens ONLY using agent (not debugging mode)
 7B. Hid the desktop nav in the header when used on mobile screen fixed by using agent (not debugging mode)
-8 
+8 Narrowed the type for TypeScript in QuoteOfTheDay (fix by prompting Agent)
+9.CSS custom classes in global replaced by Tailwind Utility classes in components
+10 - 12. inline styles replaced by Tailwind CSS
